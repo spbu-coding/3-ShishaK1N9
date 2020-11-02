@@ -3,7 +3,7 @@ Double data:
     x + 1.000100000000000 * y = 2.000100000000000
     Epsilon = 0.000001000000000
 Experiment in doubles
-    Calculation #1: 
+    Calculation #1:
         x = -0.000000000002110, y = 2.000000000002110
         Distance = 1.414213562376079
         Delta = 0.000100000000000
