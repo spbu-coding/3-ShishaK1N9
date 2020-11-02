@@ -2,16 +2,16 @@
  * Gags with precision
  *
  * Roman Shishkin
- * Last update: 25.10.2020
+ * Last update: 02.11.2020
  */
 #include <stdio.h>
 #include <math.h>
 
 const float FLOAT_EPSILON = 1e-6f, FLOAT_SECOND_POINT_COEFFICIENT = 1e-4f, FLOAT_MAX_DELTA = 1e-4f;
-const float FLOAT_DELTA_EPSILON = 1e-8f, FLOAT_TRUE_FIRST_POINT = 1.0f, FLOAT_TRUE_SECOND_POINT = 1.0f;
+const float FLOAT_TRUE_FIRST_POINT = 1.0f, FLOAT_TRUE_SECOND_POINT = 1.0f;
 const float FLOAT_FIRST_SUM = 2.0f, FLOAT_SECOND_SUM = 2.0001f;
 const double DOUBLE_EPSILON = 1e-6, DOUBLE_SECOND_POINT_COEFFICIENT = 1e-4, DOUBLE_MAX_DELTA = 1e-4;
-const double DOUBLE_DELTA_EPSILON = 1e-16, DOUBLE_TRUE_FIRST_POINT = 1.0, DOUBLE_TRUE_SECOND_POINT = 1.0;
+const double DOUBLE_TRUE_FIRST_POINT = 1.0, DOUBLE_TRUE_SECOND_POINT = 1.0;
 const double DOUBLE_FIRST_SUM = 2.0, DOUBLE_SECOND_SUM = 2.0001;
 
 struct double_points
@@ -58,21 +58,25 @@ void float_output_results(float float_delta)
 {
     printf("Experiment in floats\n");
     int index = 1;
+    float float_last_distance;
     while(calc_distance_in_float(calc_answer_in_float(float_delta)) > FLOAT_EPSILON)
     {
         printf("    Calculation #%d:\n", index);
         struct float_points answer = calc_answer_in_float(float_delta);
         printf("        x = %.7f, y = %.7f\n", answer.first_point, answer.second_point);
-        printf("        Distance = %.7f\n", calc_distance_in_float(answer));
+        float float_new_distance = calc_distance_in_float(answer);
+        printf("        Distance = %.7f\n", float_new_distance);
         printf("        Delta = %.7f\n", float_delta);
         float_delta /= 2;
         index++;
-        if(float_delta < FLOAT_DELTA_EPSILON)
-        {
-            printf("    Something went wrong:\n");
-            printf("    Delta = 0\n");
-            break;
-        }
+        if(index != 1)
+            if(fabsf(float_last_distance - float_new_distance) < FLOAT_EPSILON)
+            {
+                printf("    Something went wrong:\n");
+                printf("    Distance doesn't change\n");
+                break;
+            }
+        float_last_distance = float_new_distance;
     }
     printf("End of experiment in floats.\n");
 }
@@ -81,21 +85,25 @@ void double_output_results(double double_delta)
 {
     printf("Experiment in doubles\n");
     int index = 1;
+    double double_last_distance;
     while(calc_distance_in_double(calc_answer_in_double(double_delta)) > DOUBLE_EPSILON)
     {
         printf("    Calculation #%d:\n", index);
         struct double_points answer = calc_answer_in_double(double_delta);
-        printf("        x = %.15lf, y = %.15lf\n", answer.first_point, answer.second_point);
-        printf("        Distance = %.15lf\n", calc_distance_in_double(answer));
-        printf("        Delta = %.15lf\n", double_delta);
+        printf("        x = %.15f, y = %.15f\n", answer.first_point, answer.second_point);
+        double double_new_distance = calc_distance_in_double(answer);
+        printf("        Distance = %.15f\n", double_new_distance);
+        printf("        Delta = %.15f\n", double_delta);
         double_delta /= 2;
         index++;
-        if(double_delta < DOUBLE_DELTA_EPSILON)
-        {
-            printf("    Something went wrong:\n");
-            printf("    Delta = 0\n");
-            break;
-        }
+        if(index != 1)
+            if(fabs(double_last_distance - double_new_distance) < DOUBLE_EPSILON)
+            {
+                printf("    Something went wrong:\n");
+                printf("    Distance doesn't change\n");
+                break;
+            }
+        double_last_distance = double_new_distance;
     }
     printf("End of experiment in doubles.\n");
 }
