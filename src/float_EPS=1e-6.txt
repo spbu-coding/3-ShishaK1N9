@@ -21,7 +21,7 @@ Experiment in floats
         Delta = 0.0000125
     Calculation #5:
         x = 0.9385262, y = 1.0614738
-        Distance = 0.0869371
+        Distance = 0.0869372
         Delta = 0.0000062
     Calculation #6:
         x = 0.9697762, y = 1.0302238
@@ -59,6 +59,38 @@ Experiment in floats
         x = 1.0009041, y = 0.9990959
         Distance = 0.0012786
         Delta = 0.0000000
+    Calculation #15:
+        x = 1.0009651, y = 0.9990349
+        Distance = 0.0013649
+        Delta = 0.0000000
+    Calculation #16:
+        x = 1.0009956, y = 0.9990044
+        Distance = 0.0014080
+        Delta = 0.0000000
+    Calculation #17:
+        x = 1.0010109, y = 0.9989891
+        Distance = 0.0014296
+        Delta = 0.0000000
+    Calculation #18:
+        x = 1.0010185, y = 0.9989815
+        Distance = 0.0014404
+        Delta = 0.0000000
+    Calculation #19:
+        x = 1.0010223, y = 0.9989777
+        Distance = 0.0014458
+        Delta = 0.0000000
+    Calculation #20:
+        x = 1.0010242, y = 0.9989758
+        Distance = 0.0014485
+        Delta = 0.0000000
+    Calculation #21:
+        x = 1.0010252, y = 0.9989748
+        Distance = 0.0014499
+        Delta = 0.0000000
+    Calculation #22:
+        x = 1.0010257, y = 0.9989743
+        Distance = 0.0014505
+        Delta = 0.0000000
     Something went wrong:
-    Delta = 0
+    Distance doesn't change
 End of experiment in floats.
