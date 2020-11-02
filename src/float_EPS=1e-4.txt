@@ -1,0 +1,46 @@
+Float data:
+    x + y = 2.0000000
+    x + 1.0001000 * y = 2.0000999
+    Epsilon = 0.0001000
+Experiment in floats
+    Calculation #1:
+        x = 0.0010262, y = 1.9989738
+        Distance = 1.4127624
+        Delta = 0.0001000
+    Calculation #2:
+        x = 0.5010262, y = 1.4989738
+        Distance = 0.7056556
+        Delta = 0.0000500
+    Calculation #3:
+        x = 0.7510262, y = 1.2489738
+        Distance = 0.3521022
+        Delta = 0.0000250
+    Calculation #4:
+        x = 0.8760262, y = 1.1239738
+        Distance = 0.1753255
+        Delta = 0.0000125
+    Calculation #5:
+        x = 0.9385262, y = 1.0614738
+        Distance = 0.0869372
+        Delta = 0.0000062
+    Calculation #6:
+        x = 0.9697762, y = 1.0302238
+        Distance = 0.0427430
+        Delta = 0.0000031
+    Calculation #7:
+        x = 0.9854012, y = 1.0145988
+        Distance = 0.0206459
+        Delta = 0.0000016
+    Calculation #8:
+        x = 0.9932137, y = 1.0067863
+        Distance = 0.0095973
+        Delta = 0.0000008
+    Calculation #9:
+        x = 0.9971199, y = 1.0028801
+        Distance = 0.0040731
+        Delta = 0.0000004
+    Calculation #10:
+        x = 0.9990730, y = 1.0009270
+        Distance = 0.0013109
+        Delta = 0.0000002
+End of experiment in floats.
